@@ -2324,6 +2324,14 @@ plot_conf_mat(conf_mat)
 
 from sklearn.metrics import plot_confusion_matrix
 plot_confusion_matrix(clf, X, y);
+
+# note: this method of plotting doesn't work again in sklearn,
+# use this
+ from sklearn.metrics import ConfusionMatrixDisplay
+ ConfusionMatrixDisplay.from_estimator(clf, X_test, y_test)
+# show plot
+ import matplotlib.pyplot as plt
+plt.show()
 ```
 
 ```python
